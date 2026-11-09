@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binary Arithmetic Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="brand">
+    <span class="logo">01</span>
+    <div><h1>Binary Arithmetic Calculator</h1><p>Computer Organization and Architecture</p></div>
+  </div>
+</header>
+
+<main class="layout">
+  <aside class="panel">
+    <h2>Inputs</h2>
+    <label class="f">Number A
+      <input id="a" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 25">
+    </label>
+    <label class="f">Number B
+      <input id="b" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. -12">
+    </label>
+    <div class="f">
+      <span class="lab">Number of bits (1 to 16)</span>
+      <div class="bitsrow">
+        <input type="range" id="bitsR" min="1" max="16" value="8" aria-label="Bits slider">
+        <input type="number" id="bitsN" min="1" max="16" value="8" aria-label="Bits">
+      </div>
+      <small id="range"></small>
+    </div>
+    <div class="f">
+      <span class="lab">Operation</span>
+      <div class="ops" id="ops"></div>
+    </div>
+    <button class="primary" id="go">Calculate</button>
+  </aside>
+
+  <section class="out">
+    <div class="card result">
+      <div class="rhead"><b id="opname">Select an operation</b><span class="chip" id="chip"></span></div>
+      <div class="expr" id="expr">&nbsp;</div>
+      <div class="lab2">Answer in binary</div>
+      <div class="binout" id="binout"><span class="idle">Enter A and B, then press Calculate.</span></div>
+      <div class="warn" id="warn"></div>
+    </div>
+
+    <div class="card"><h2>Rule used</h2><p class="rule" id="rule"></p></div>
+
+    <div class="card"><h2>Register view</h2><div class="regs" id="regs"><span class="idle">Bits will appear here.</span></div></div>
+
+    <div class="card">
+      <div class="head">
+        <h2>Working, step by step</h2>
+        <div class="btns"><button id="next">Next step</button><button id="showall">Show all</button><button id="replay">Replay</button></div>
+      </div>
+      <div class="prog"><i id="fill"></i></div>
+      <div id="steps"></div>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
